@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <jsp:include page="header.jsp" />
+        <link rel="stylesheet" href="css/index.css">
+        <meta charset="UTF-8">
+        <title>분리되지 않은 HTML</title>        
+    </head>
+    <body>
+        <header>
+          LOMA
+        </header>
+        
+        <section>
+          <div id="nav">
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li onclick="menu(1);"><a href="#">메뉴1</a></li>
+                <li onclick="menu(2);"></li><a href="#">메뉴2</a></li>
+                <li onclick="menu(3);"><a href="#">메뉴3</a></li>
+            </ul>
+        </div>
+          
+          <article>
+                <div id="section">
+                    <h1>화면</h1>
+                </div>
+          </article>
+        </section>
+        
+        <footer>
+          <p>Footer</p>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+        <script type="text/javascript">
+            //페이지가 로드되면 실행한다.
+            $(document).ready( function() {
+                // $("#contents").load("header.html"); 
+                //~이렇게 한줄만 해주면 알아서 contents에 testContents.html파일을 넣어 준다.
+            });
+            function menu(no){
+                console.log(no);
+                $('#section').load('menu'+no+'.html?postNo=23');
+            }
+        </script>
+        </body>
+        
+
+    
+</html>
